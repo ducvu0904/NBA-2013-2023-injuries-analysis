@@ -11,8 +11,8 @@ Chạy:
     python fetch_nba_stats.py
 
 Output:
-    nba_stats_cache/          -- raw data từng endpoint/season (tránh fetch lại)
-    injury_stat_enriched.csv  -- dataset gốc + ~80 features mới
+    data/cache/nba_stats/          -- raw data từng endpoint/season (tránh fetch lại)
+    data/interim/injury_stat_enriched.csv  -- dataset gốc + ~80 features mới
 """
 
 import time
@@ -21,9 +21,9 @@ import pandas as pd
 from nba_api.stats.endpoints import leaguedashplayerstats, leaguedashptstats
 
 # ── Config ────────────────────────────────────────────────────────────────────
-INPUT_FILE  = "injury_stat_filled.csv"   # output từ fill_team_fast.py
-OUTPUT_FILE = "injury_stat_enriched.csv"
-CACHE_DIR   = "nba_stats_cache"
+INPUT_FILE  = "data/interim/injury_stat_filled.csv"   # output từ fill_team_fast.py
+OUTPUT_FILE = "data/interim/injury_stat_enriched.csv"
+CACHE_DIR   = "data/cache/nba_stats"
 DELAY       = 1.5  # giây giữa các API calls
 
 SEASONS = [

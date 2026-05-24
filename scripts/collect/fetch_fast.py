@@ -15,17 +15,17 @@ Chạy:
     python fill_team_fast.py
 
 Output:
-    injury_stat_filled.csv
-    season_roster_cache.csv   -- cache 10 seasons, dùng lại được
+    data/interim/injury_stat_filled.csv
+    data/cache/season_roster_cache.csv   -- cache 10 seasons, dùng lại được
 """
 
 import time
 import pandas as pd
 from nba_api.stats.endpoints import leaguedashplayerstats
 
-INPUT_FILE   = "injury+stat.csv"
-OUTPUT_FILE  = "injury_stat_filled.csv"
-CACHE_FILE   = "season_roster_cache.csv"
+INPUT_FILE   = "data/raw/injury+stat.csv"
+OUTPUT_FILE  = "data/interim/injury_stat_filled.csv"
+CACHE_FILE   = "data/cache/season_roster_cache.csv"
 
 REQUEST_DELAY = 1.5  # giây, đủ an toàn với rate limit NBA API
 
